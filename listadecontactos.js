@@ -27,6 +27,9 @@ function eliminarContacto(pos, cantidadContact) {
 function verLista() {
   console.log(listaContactos);
 }
+function modificarContacto(posmodi, cantimodContact, modiContact) {
+  listaContactos.splice(posmodi, cantimodContact, modiContact);
+}
 
 listaContactos.push(
   añadirContacto(
@@ -39,7 +42,6 @@ listaContactos.push(
     "Calle 2 B #03-89"
   )
 );
-
 listaContactos.push(
   añadirContacto(
     19849273512,
@@ -49,6 +51,20 @@ listaContactos.push(
     " ",
     "El Retiro",
     "Carrera 85  #33 A 102"
+  )
+);
+
+modificarContacto(
+  0,
+  1,
+  añadirContacto(
+    13267204693,
+    "Lina María",
+    "Montemayor Sépulveda",
+    3129734068,
+    " ",
+    "El Carme de Viboral",
+    "Diagonal 45 C #43 - 102"
   )
 );
 
