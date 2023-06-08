@@ -31,9 +31,12 @@ let listaContactos = [
   }),
 ];
 
+//realizo las funciones añadir, eliminar, imprimir y modificar
+
 function añadirContacto(id, nombres, apellidos, teléfono, ubicaciones = {}) {
   return { id, nombres, apellidos, teléfono, ubicaciones };
 }
+
 function eliminarContacto(nombre) {
   for (let i = 0; i < listaContactos.length; i++) {
     if (listaContactos[i].nombres === nombre) {
@@ -41,9 +44,11 @@ function eliminarContacto(nombre) {
     }
   }
 }
+
 function verLista() {
   console.log(listaContactos);
 }
+
 function modificarContacto(modiNombre, modiContact) {
   for (let i = 0; i < listaContactos.length; i++) {
     if (listaContactos[i].nombres === modiNombre) {
@@ -52,19 +57,22 @@ function modificarContacto(modiNombre, modiContact) {
   }
 }
 
+// Realizo las funciones agrego 2 contactos, modifico el primer contacto y elimino al primer contacto que agregue para mostrar la lista organizada
+
 listaContactos.push(
   añadirContacto(23436578563, "Mauricio", "Espitia Lopera", 3224923984, {
     ciudad: "La Ceja",
     dirección: "Calle 2 B #03-89",
   })
 );
+
 listaContactos.push(
   añadirContacto(19849273512, "Saray Iris", "González", 3214590607, {
     ciudad: "El Retiro",
     dirección: "Carrera 85  #33 A 102",
   })
 );
-verLista();
+
 modificarContacto(
   "Raúl Daniel",
   añadirContacto(
@@ -77,4 +85,5 @@ modificarContacto(
 );
 
 eliminarContacto("Mauricio");
+
 verLista();
